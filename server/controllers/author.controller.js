@@ -9,3 +9,9 @@ module.exports.index = (request, response) => {
         .then(author => response.json(author))
         .catch(err => response.json(err));
 }
+
+module.exports.getAllAuthors = (request, response) => {
+    Author.getAllAuthors()
+        .then(authors => response.json(authors))
+        .catch(err => response.jsong("error", err))
+}
